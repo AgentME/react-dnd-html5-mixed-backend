@@ -246,6 +246,10 @@ export default class HTML5Backend {
 
     const clientOffset = getEventClientOffset(e);
 
+    if (this.monitor.isDragging()) {
+      this.actions.endDrag();
+    }
+    
     // Don't publish the source just yet (see why below)
     this.actions.beginDrag(dragStartSourceIds, {
       publishSource: false,
