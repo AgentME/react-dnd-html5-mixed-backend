@@ -9,10 +9,9 @@
     "build:umd": "webpack",
     "build": "npm run build:lib && npm run build:umd",
     "lint": "eslint .",
-    "test": "mocha --compilers js:babel/register --recursive",
+    "test": "mocha --require babel/register --recursive",
     "test:watch": "npm run test -- --watch",
-    "prepublish": "npm run lint && npm run clean && npm run test && npm run build",
-    "postpublish": "publish-latest"
+    "prepublish": "npm run lint && npm run clean && npm run test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -36,7 +35,7 @@
     "webpack": "^1.12.2"
   },
   "dependencies": {
-    "lodash": "^3.10.1"
+    "lodash": "^4.17.10"
   },
   "peerDependencies": {
     "react-dnd": "^2.0.0"
